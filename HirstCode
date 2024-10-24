@@ -1,0 +1,41 @@
+import colorgram
+import turtle as turtle_module
+import random
+
+# rgb_colors = []
+# colors = colorgram.extract("Hirst.jpg", 30)
+# for color in colors:
+#     r = color.rgb.r
+#     g = color.rgb.g
+#     b = color.rgb.b
+#     new_color = (r, g, b)
+#     rgb_colors.append(new_color)
+#
+# print(rgb_colors)
+
+turtle_module.colormode(255)
+tim = turtle_module.Turtle()
+tim.speed("fastest")
+tim.penup()
+tim.hideturtle()
+color_list = [(227, 150, 83), (220, 235, 228), (238, 221, 230), (111, 174, 205), (34, 113, 159), (157, 56, 93), (161, 13, 41), (184, 170, 20), (231, 84, 47), (174, 80, 40), (36, 130, 75), (227, 205, 105), (18, 170, 207), (45, 22, 14), (60, 14, 29), (17, 27, 62), (204, 68, 111), (196, 139, 167), (127, 182, 154), (5, 108, 75), (10, 45, 29), (65, 165, 115), (138, 215, 228), (161, 14, 8), (26, 52, 125), (228, 167, 192), (108, 113, 174), (157, 212, 187)]
+
+tim.setheading(225)
+tim.forward(300)
+tim.setheading(0)
+number_of_dots = 100
+
+for dot_count in range(1, number_of_dots):
+    tim.dot(20, random.choice(color_list))
+    tim.forward(50)
+
+    if dot_count % 10 == 0:
+        tim.setheading(90)
+        tim.forward(50)
+        tim.setheading(180)
+        tim.forward(500)
+        tim.setheading(0)
+
+
+screen = turtle_module.Screen()
+screen.exitonclick()
